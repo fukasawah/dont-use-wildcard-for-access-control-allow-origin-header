@@ -71,9 +71,9 @@ CORSの仕組みである`Access-Control-Allow-Origin`ヘッダを適切に返�
 以下は`Access-Control-Allow-Origin`の設定時の利用可能な状態一覧です。
 
 |                     |`*` | ` http://myapp.example `| ` http://trust.example `|
-|---------------------|-----|-----|
-｜http://myapp.example | ○ | ○ | × |
-｜http://trust.example | ○ | × | ○ |
-｜http://evil.example | ○ | × | × |
+|---------------------|-----|-----|-----|
+|http://myapp.example | ○ | ○ | × |
+|http://trust.example | ○ | × | ○ |
+|http://evil.example | ○ | × | × |
 
 `Access-Control-Allow-Origin`ヘッダは1個の情報しか返せないため、CrossOriginに公開する場合はサーバ側でOriginヘッダを判断する処理が必要です。
