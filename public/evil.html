@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<body>
+
+    <button id="attackButton">Attack!!</button>
+    <script>
+
+    var is_attack = false;
+
+    document.getElementById('attackButton').addEventListener('click', function(e){
+        is_attack = !is_attack;
+        e.target.innerText = is_attack ? "Stop!!" : "Attack!!";
+        attack();
+    })
+
+    function attack(){
+        if(is_attack){
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://myapp.example/hello");
+            xhr.setRequestHeader('Hello', 'hello');
+            xhr.send();
+            setTimeout(attack, 0);
+        }
+    }
+    </script>
+</body>

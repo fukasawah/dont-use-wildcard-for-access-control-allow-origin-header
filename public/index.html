@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<body>
+
+    <button id="helloButton">Hello?</button>
+    <script>
+
+    var is_attack = false;
+
+    document.getElementById('helloButton').addEventListener('click', function(e){
+       
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://myapp.example/hello");
+        xhr.setRequestHeader('Hello', 'hello');
+        xhr.onreadystatechange  = function(){
+            if(xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText);
+            }
+        }
+        xhr.send();
+    })
+    
+    </script>
+</body>
